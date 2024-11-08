@@ -12,6 +12,8 @@ import java.util.List;
 @RequestMapping ("/Users")
 public class userController
 {
+    private userDaoService service;
+
     private final List<User> user = new ArrayList<>();
 
 
@@ -19,7 +21,7 @@ public class userController
     @RequestMapping ("/AllUsers")
     public List<User> getAllUsers()
     {
-          return user;
+          return service.getAllUsers();
     }
 
     @GetMapping
