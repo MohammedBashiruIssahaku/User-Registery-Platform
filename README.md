@@ -1,30 +1,44 @@
-Project: User Registry Platform
-Overview: The User Registry Platform is a backend application built using the Spring Boot framework, designed to manage user data with CRUD (Create, Read, Update, Delete) functionality. This project serves as a fundamental system for storing, retrieving, updating, and deleting user information, showcasing a well-organized backend structure and the practical implementation of essential database operations.
+The User Registry Platform is a Spring Boot backend application designed to manage user data with full CRUD (Create, Read, Update, Delete) functionality. It provides a foundational system for storing, retrieving, updating, and deleting user information, demonstrating an organized backend structure and essential database operations.
 
-Core Features:
+ Core Features
 
-User Management:
+- User Management: Create, read, update, and delete user profiles with details such as name, email, and address.
+- CRUD Operations: Modular endpoints for each operation, with robust error handling for smooth performance.
+- Database Integration: Uses a relational database with Spring Data JPA for seamless data interaction.
+- API Design: RESTful endpoints following best practices, accessible for frontend or further development.
 
-Allows for the creation of new user profiles with relevant details (e.g., name, email, phone number, address).
-Supports retrieval of user data, enabling the display of information for each user by unique identifiers.
-Facilitates updates to existing user profiles, allowing for the modification of details as needed.
-Provides functionality to delete users from the database as required.
-CRUD Operations:
+ Technologies Used
 
-Each endpoint is dedicated to performing one of the CRUD operations, ensuring modular and easy-to-maintain code.
-Robust error handling ensures smooth operation, with meaningful error messages for cases like missing or invalid data.
-Database Integration:
+- Spring Boot for backend logic
+- Spring Data JPA for database management
+- MySQL/PostgreSQL/H2 for data storage
+- Maven for dependency management
+- Postman for API testing
 
-Utilizes a relational database to store user information, with Spring Data JPA for seamless database interaction.
-Includes a well-defined entity model for user data, and mapping between the database and application.
-API Design:
+### Running the Application
 
-Follows RESTful principles, making the API intuitive and accessible for frontend integration or further development.
-Each operation is accessed via a specific endpoint, such as /users for listing users, /users/{id} for specific user details, etc.
-Technologies Used:
+To run the application locally without Docker, make sure **Maven** is installed.
 
-Spring Boot: For building the application’s core logic and structure.
-Spring Data JPA: For database management and ORM (Object-Relational Mapping) to simplify data persistence.
-MySQL/PostgreSQL/H2 (or another relational database): For storing and retrieving user data.
-Maven: For managing project dependencies.
-Postman (or similar tool): For testing and verifying API endpoints.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/user-registry-platform.git
+   cd user-registry-platform
+   ```
+
+2. Configure Database Connection:
+   Update the `application.properties` file in the `src/main/resources` directory with your database details:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/yourdatabase
+   spring.datasource.username=yourusername
+   spring.datasource.password=yourpassword
+   ```
+
+3. Build and Run the Application:
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+   ```
+
+4. Access the Application:
+   Open `http://localhost:8080` in your browser or use Postman to interact with the API.
+
